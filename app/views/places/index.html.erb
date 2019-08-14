@@ -19,5 +19,17 @@
         </blockquote>
       </div>
     <% end %>
+
+    <% if place.photos.present? %>
+      <div class="col-12">
+        <blockquote>
+          <% if place.photos.last.present? %>
+            <%= image_tag photo.picture.url, :height => "150px" %>
+          <% end %>
+        </blockquote>
+      </div>
+    <% end %>
+
   </div>
 <% end %>
+
