@@ -1,3 +1,4 @@
+
 <% @places.each do |place| %>
   <div class="booyah-box col-10 offset-1">
     <h1><%= link_to place.name, place_path(place) %></h1><br />
@@ -24,7 +25,9 @@
       <div class="col-12">
         <blockquote>
           <% if place.photos.last.present? %>
-            <%= image_tag photo.picture.url, :height => "150px" %>
+          <% place.photos.each do |photo| %>
+            <%= image_tag photo.picture.to_s, :height => "150px" %>
+            <% end %>
           <% end %>
         </blockquote>
       </div>
